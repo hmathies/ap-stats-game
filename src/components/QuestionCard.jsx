@@ -109,6 +109,13 @@ export default function QuestionCard({
           <h3 className="text-xl font-bold text-gray-800 mb-4">
             {question.prompt}
           </h3>
+          {/* Supporting Image/Visualization */}
+          {question.supportingImage && question.supportingImage.type === 'html' && (
+            <div 
+              className="my-6"
+              dangerouslySetInnerHTML={{ __html: question.supportingImage.content }}
+            />
+          )}
           
           {showHint && (
             <div className="bg-blue-50 border-l-4 border-blue-500 p-4 mb-4 rounded">
